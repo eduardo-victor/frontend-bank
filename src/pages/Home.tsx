@@ -22,7 +22,7 @@ const Home = () => {
         </div>
       </div>
       <div className='w-full h-[60vh] md:h-[65vh] lg:h-[90vh] bg-yellow flex flex-col items-center'>
-        <div className='mt-20 flex flex-col gap-14 lg:gap-24'>
+        <div className='mt-20 flex flex-col gap-14 lg:gap-12'>
           <Comment image={firstImage} comment={"“Bankey has one of the best supports I've ever seen! It's easy and fast to use.”"} />
           <Comment image={secondImage} comment={'“Bankey has a unique investment platform, it is easy and intuitive.”'} />
           <Comment image={thirdImage} comment={'“This bank is amazing, it has no annual fees and even has a cashback system!”'}/>
