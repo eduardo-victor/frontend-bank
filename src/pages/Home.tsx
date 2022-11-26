@@ -18,7 +18,7 @@ const Home = () => {
       <div className="w-full h-screen bg-cover bg-[url('./assets/images/backgroundMobile.png')] md:bg-[url('./assets/images/background.png')] lg:bg-[url('./assets/images/backgroundWeb.png')]  z-auto flex items-end justify-center">
         <div className='w-[95vw] flex flex-col mb-20 md:ml-14 lg:w-[50vw] lg:ml-0 '>
           <h1 className='text-[10vw] md:text-[7vw] lg:text-[4vw]  font-extrabold text-white [text-shadow:_0_1px_0_rgb(0_0_0_/_20%)] font-inter'>We are the <span className='text-yellow'>key</span> to your financial success!</h1>
-          <Link to="/register" className='text-[2.5vh] md:text-[3vh] font-inter font-medium text-yellow [text-shadow:_0_1px_0_rgb(0_0_0_/_20%)] hover:text-white hover:cursor-pointer hover:transition-all hover:translate-x-1'>I want be part</Link>
+            <Link to="/register" className='text-[2.5vh] md:text-[3vh] font-inter font-medium text-yellow [text-shadow:_0_1px_0_rgb(0_0_0_/_20%)] hover:text-white hover:cursor-pointer hover:transition-all hover:translate-x-1'>I want be part</Link>
         </div>
       </div>
       <div className='w-full h-[60vh] md:h-[65vh] lg:h-[90vh] bg-yellow flex flex-col items-center'>
