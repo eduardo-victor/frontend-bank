@@ -20,7 +20,7 @@ const RegisterPage = () => {
                 <input type="date" placeholder='Born Date' className='py-2 px-[8.3vh] lg:px-14 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 <button className='py-2 px-[12vh] lg:px-[11vh] font-inter border-2 border-yellow bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white'>Register</button>
             </form>
-            <Link to="/" className='font-inter text-sm hover:text-yellow'>Already have key? Click here!</Link>
+            <Link to="/login" className='font-inter text-sm hover:text-yellow'>Already have key? Click here!</Link>
         </div>
     </div>
   )
