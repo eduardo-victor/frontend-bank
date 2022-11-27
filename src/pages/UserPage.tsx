@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import UserNav from '../components/UserNav'
 import Image from '../assets/commentImages/firstComment.png'
 import Card from '../components/Card'
@@ -6,14 +6,25 @@ import IconDeposit from '../assets/cardImages/cashpayment.png'
 import IconTransfer from '../assets/cardImages/moneytransf.png'
 import IconCard from '../assets/cardImages/creditcard.png'
 import IconLog from '../assets/cardImages/log.png'
+import Eye from '../assets/images/eyeslash.png'
 
 const UserPage = () => {
+  const [balanceShown, setBalanceShown ] = useState(false);
+  
+  const toggleBalance = () => {
+    setBalanceShown(!balanceShown)
+  }
+
+
   return (
     <>
       <UserNav image={'a'}/>
       <div className='w-screen h-screen flex flex-col'>
         <div className='w-screen flex justify-between'>
-          <h1 className='font-inter text-lg mt-7 ml-4'>R$   {'7.895,00'}</h1>
+          <div className='flex items-center mt-7 gap-2'>
+            <h1 className='font-inter text-lg ml-4'>R$ {balanceShown ? "7.895,00" : "******"} </h1>
+            <span className='hover:cursor-pointer' onClick={toggleBalance}><img src={Eye}/></span>
+          </div>
           <h1 className='font-inter text-lg mt-7 mr-4'>Welcome, {'User'}.</h1>
         </div>
       <div className='w-full h-screen flex items-end'>
