@@ -27,8 +27,8 @@ const Navbar = () => {
         </div>
         <ul className={!nav ? 'hidden' : 'absolute bg-white w-full px-8 lg:hidden'}>
             <div className='flex flex-col my-4 gap-4'>
-            <button className='py-3 px-32 font-semibold font-inter border-2 border-yellow md:px-6 bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white [text-shadow:_0_0.5px_0_rgb(0_0_0_/_20%)]'>Login</button>
-            <button className='py-3 px-32 font-semibold font-inter border-2 border-yellow md:px-6 bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white [text-shadow:_0_0.5px_0_rgb(0_0_0_/_20%)]'>Register</button>
+            <Link to='login' className='py-3 px-32 font-semibold font-inter border-2 border-yellow md:px-6 bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white [text-shadow:_0_0.5px_0_rgb(0_0_0_/_20%)]'>Login</Link>
+            <Link to='register' className='py-3 px-32 font-semibold font-inter border-2 border-yellow md:px-6 bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white [text-shadow:_0_0.5px_0_rgb(0_0_0_/_20%)]'>Register</Link>
             </div>
         </ul>
     </>

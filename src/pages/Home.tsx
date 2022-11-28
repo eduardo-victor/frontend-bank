@@ -38,7 +38,7 @@ const Home = () => {
           <img src={creditCard} alt="" />
         </div>
         <div className='flex md:hidden'>
-          <button className='py-3 px-32 mt-10 font-semibold font-inter border-2 border-yellow md:px-6 bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white [text-shadow:_0_0.5px_0_rgb(0_0_0_/_20%)]'>More about</button>
+          <Link to='/register' className='py-3 px-32 mt-10 font-semibold font-inter border-2 border-yellow md:px-6 bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white [text-shadow:_0_0.5px_0_rgb(0_0_0_/_20%)]'>More about</Link>
         </div>
       </div>
     </div>
