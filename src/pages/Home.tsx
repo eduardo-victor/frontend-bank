@@ -4,7 +4,6 @@ import firstImage from '../assets/commentImages/firstComment.png'
 import secondImage from '../assets/commentImages/secondComment.png'
 import thirdImage from '../assets/commentImages/thirdComment.png'
 import  creditCard from '../assets/images/creditCard.png'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar.jsx'
 
