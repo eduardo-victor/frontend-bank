@@ -1,8 +1,11 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import hideIcon from '../assets/images/eyeslash.png'
 
 const LoginPage = () => {
+
+
 
   return (
     <div className='w-full h-screen bg-yellow flex items-center justify-center flex-col gap-4'>
