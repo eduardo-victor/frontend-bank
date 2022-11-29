@@ -6,6 +6,7 @@ import IconTransfer from '../assets/cardImages/moneytransf.png'
 import IconCard from '../assets/cardImages/creditcard.png'
 import IconLog from '../assets/cardImages/log.png'
 import Eye from '../assets/images/eyeslash.png'
+import Swal from 'sweetalert2'
 
 const UserPage = () => {
   const [balanceShown, setBalanceShown ] = useState(false);
@@ -13,6 +14,14 @@ const UserPage = () => {
   const toggleBalance = () => {
     setBalanceShown(!balanceShown)
   }
+
+  const teste = () => {Swal.fire({
+    title: 'Teste?',
+    input: 'number',
+    inputLabel: 'testando.',
+  }).then((result) =>{
+    console.log(result)
+  })}
 
 
   return (
@@ -29,6 +38,7 @@ const UserPage = () => {
       <div className='w-full h-screen flex items-end'>
         <div className='w-screen h-[90vh] bg-yellow rounded-t-2xl flex flex-col gap-8 justify-center items-center'>
           <Card icon={IconDeposit} title={'Deposit'} comment={'Deposit an amount in your account and start enjoying the benefits of bankey.'}/>
+          <button onClick={teste}>Deposit</button>
           <Card icon={IconTransfer} title={'Transfer'} comment={'Transfer any amount to another account in up to three clicks.'}/>
           <Card icon={IconLog} title={'Statement'} comment={'Check past transactions by clicking here.'}/>
           <Card icon={IconCard} title={'Card'} comment={'Know the credit requirements and apply for your card here.'}/>
@@ -37,7 +47,7 @@ const UserPage = () => {
       </div>
 
     </>
-  )
+    )
 }
 
 export default UserPage
