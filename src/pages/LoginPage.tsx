@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import hideIcon from '../assets/images/eyeslash.png'
 
 const LoginPage = () => {
 
+  const navigate = useNavigate();
+  
   const [user, setUser] = useState({
     'cpf' : '',
     'password': ''
@@ -16,7 +18,6 @@ const LoginPage = () => {
   })
 
   const onInputChange = (evt: any) => {
-    
     setUser({...user, [evt.target.name]: evt.target.value})
   }
 
@@ -26,6 +27,8 @@ const LoginPage = () => {
     .then((res) => {
       setToken(res.data)
       console.log(token.access)
+      localStorage.setItem('token', token.access)
+      navigate('/myprofile')
     })
   }
 
