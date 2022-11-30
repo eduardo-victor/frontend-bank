@@ -11,18 +11,18 @@ const RegisterPage = () => {
     'email': '',
     'wage': '',
     'password': '',
-    'born_date': ''
+    'born_day': ''
   })
 
   const onInputChange = (evt: any) => {
     evt.preventDefault()
     setRegister({...register, [evt.target.name]: evt.target.value })
-    console.log(register)
   }
 
   const registerUser = (event: any) => {
     event.preventDefault()
-    axios.post('http://127.0.0.1:8000/api/client/', JSON.stringify(register), {headers:{"Content-Type" : "application/json"}})
+    console.log(register)
+    axios.post('http://127.0.0.1:8000/api/client/', register, {headers:{"Content-Type" : "application/json"}})
     .then((res) => {
       console.log(res)
     })
@@ -42,7 +42,7 @@ const RegisterPage = () => {
                 <input type="email" placeholder='Email' name='email' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 <input type="text" placeholder='Wage' name='wage' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 <input type="password" placeholder='Password' name='password' onChange={onInputChange}  className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
-                <input type="text" placeholder='Born Date' name='born_date' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
+                <input type="text" placeholder='Born Date (AAAA-MM-DD)' name='born_day' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 
                 <button className='py-2 px-[12vh] lg:px-[11vh] font-inter border-2 border-yellow bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white'>Register</button>
             </form>
