@@ -21,7 +21,6 @@ const RegisterPage = () => {
 
   const registerUser = (event: any) => {
     event.preventDefault()
-    console.log(register)
     axios.post('http://127.0.0.1:8000/api/client/', register, {headers:{"Content-Type" : "application/json"}})
     .then((res) => {
       console.log(res)
