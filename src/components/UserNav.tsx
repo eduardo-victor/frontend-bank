@@ -9,7 +9,7 @@ type GetProps = {
 
 const UserNav = (props: GetProps) => {
     function Signout(){
-        console.log('Saiu')
+        console.log('Kkkkjklkjm')
     }
     
     return (

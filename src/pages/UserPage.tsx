@@ -11,10 +11,15 @@ import axios from 'axios'
 
 const UserPage = () => {
 
-  useEffect(() =>{
-    console.log(localStorage.getItem("token"))
+  var getToken = sessionStorage.getItem('id')
+  
+  useEffect(() => {
+    axios.get(`http://127.0.0.1:8000/api/client/${getToken}/`)
+    .then((res) => {
+      setApi(res.data)
+    })
   }, [])
-
+  
   const [balanceShown, setBalanceShown ] = useState(false);
   const [api, setApi] = useState({
     born_day: "",

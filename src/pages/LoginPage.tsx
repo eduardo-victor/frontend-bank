@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import hideIcon from '../assets/images/eyeslash.png'
+import Notiflix from 'notiflix'
 
 const LoginPage = () => {
 
@@ -12,11 +13,6 @@ const LoginPage = () => {
     'password': ''
   })
 
-  const [token, setToken] = useState({
-    'refresh': "",
-    'access': ""
-  })
-
   const onInputChange = (evt: any) => {
     setUser({...user, [evt.target.name]: evt.target.value})
   }
@@ -25,10 +21,11 @@ const LoginPage = () => {
     event.preventDefault()
     axios.post('http://127.0.0.1:8000/api/token/', user, {headers:{"Content-Type" : "application/json"}})
     .then((res) => {
-      setToken(res.data)
-      console.log(token.access)
-      localStorage.setItem('token', token.access)
+      localStorage.setItem('token', `${res.data['access']}`)
       navigate('/myprofile')
+    })
+    .catch((err) => {
+      Notiflix.Notify.failure('Usuário ou senha incorretos D:')
     })
   }
 
@@ -41,7 +38,7 @@ const LoginPage = () => {
                 <input type="text" placeholder='CPF' name='cpf' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 <input type="password" placeholder='Password' name='password' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 
-                <button className='py-2 px-[12vh] lg:px-[11vh] font-inter border-2 border-white bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white'>Register</button>
+                <button className='py-2 px-[12vh] lg:px-[11vh] font-inter border-2 border-white bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white'>Login</button>
         </form>
             <Link to="/register" className='font-inter text-sm mb-10 hover:text-yellow'>Don't have a key? Click here!</Link>
         </div>
