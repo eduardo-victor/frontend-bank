@@ -54,7 +54,7 @@ const UserPage = () => {
     <>
       <UserNav image={'a'}/>
       <div className='w-screen h-screen flex flex-col'>
-        <div className='w-screen h-[20vh] flex items-center justify-between'>
+        <div className='w-screen h-[20vh] flex items-center justify-between ml-10'>
           <div className='flex items-center mt-7'>
             <h1 className='font-inter text-lg ml-4 lg:text-3xl lg:ml-7 w-[13vw]'>R$ {balanceShown ? userApi.balance : "******"} </h1>
             <span className='hover:cursor-pointer' onClick={toggleBalance}>{eyeSlash ? <img className='w-7' src={Eye} /> : <img className='w-7' src={EyeShown}/>}</span>
@@ -70,7 +70,6 @@ const UserPage = () => {
       <div className='w-full h-screen flex items-end'>
         <div className='w-screen h-[90vh] bg-yellow rounded-t-2xl flex flex-col gap-8 justify-center items-center'>
           <Card icon={IconDeposit} title={'Deposit'} comment={'Deposit an amount in your account and start enjoying the benefits of bankey.'}/>
-          <button>Deposit</button>
           <Card icon={IconTransfer} title={'Transfer'} comment={'Transfer any amount to another account in up to three clicks.'}/>
           <Card icon={IconLog} title={'Statement'} comment={'Check past transactions by clicking here.'}/>
           <Card icon={IconCard} title={'Card'} comment={'Know the credit requirements and apply for your card here.'}/>
