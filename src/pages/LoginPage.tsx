@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import hideIcon from '../assets/images/eyeslash.png'
-import Notiflix from 'notiflix'
+import Notiflix, { Notify } from 'notiflix'
 
 const LoginPage = () => {
 
@@ -19,10 +19,12 @@ const LoginPage = () => {
 
   const login = (event: any) => {
     event.preventDefault()
-    axios.post('http://127.0.0.1:8000/api/token/', user, {headers:{"Content-Type" : "application/json"}})
+    axios.post('http://127.0.0.1:8000/api/login', user, {headers:{"Content-Type" : "application/json"}})
     .then((res) => {
-      localStorage.setItem('token', `${res.data['access']}`)
-      navigate('/myprofile')
+      localStorage.setItem('token', `${res.data['token']}`)
+      if (localStorage.getItem('token') != null){
+        navigate('/myprofile')
+      }
     })
     .catch((err) => {
       Notiflix.Notify.failure('Usuário ou senha incorretos D:')
