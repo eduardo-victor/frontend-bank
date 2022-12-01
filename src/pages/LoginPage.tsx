@@ -5,9 +5,17 @@ import hideIcon from '../assets/images/eyeslash.png'
 import Notiflix, { Notify } from 'notiflix'
 
 const LoginPage = () => {
-
-  const navigate = useNavigate();
   
+  const navigate = useNavigate();
+
+  useEffect(() =>{
+    var token = localStorage.getItem('token')
+    if (token){
+      navigate('/myprofile')
+    }
+  })
+
+
   const [user, setUser] = useState({
     'cpf' : '',
     'password': ''

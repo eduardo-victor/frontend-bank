@@ -6,6 +6,13 @@ import Notiflix from 'notiflix'
 const RegisterPage = () => {
   
   const navigate = useNavigate();
+
+  useEffect(() =>{
+    var token = localStorage.getItem('token')
+    if (token){
+      navigate('/myprofile')
+    }
+  })
   
   const [register, setRegister] = useState({
     'username': '',
