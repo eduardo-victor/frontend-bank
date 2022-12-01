@@ -56,7 +56,7 @@ const UserPage = () => {
       <div className='w-screen h-screen flex flex-col'>
         <div className='w-screen h-[20vh] flex items-center justify-between ml-10'>
           <div className='flex items-center mt-7'>
-            <h1 className='font-inter text-lg ml-4 lg:text-3xl lg:ml-7 w-[13vw]'>R$ {balanceShown ? userApi.balance : "******"} </h1>
+            <h1 className='font-inter text-lg ml-4 lg:text-3xl lg:ml-7 w-[13vw]'>R$ {balanceShown ? userApi.balance : "********"} </h1>
             <span className='hover:cursor-pointer' onClick={toggleBalance}>{eyeSlash ? <img className='w-7' src={Eye} /> : <img className='w-7' src={EyeShown}/>}</span>
           </div>
           <div className='w-[30vw] h-[8vh] flex flex-col justify-center items-center bg-white drop-shadow-md'>
