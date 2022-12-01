@@ -21,7 +21,9 @@ const UserPage = () => {
     'email': '',
     'username': '',
     'id': '',
-    'wage': ''
+    'wage': '',
+    'balance': '',
+    'number': '',
   })
 
   useEffect(() => {
@@ -31,6 +33,7 @@ const UserPage = () => {
       'Authorization': `Bearer ${getToken}`
     }})
     .then((res) => {
+      console.log(res.data.user)
       setUserApi(res.data.user)
     })}
     else{
@@ -51,10 +54,14 @@ const UserPage = () => {
       <div className='w-screen h-screen flex flex-col'>
         <div className='w-screen flex justify-between'>
           <div className='flex items-center mt-7 gap-2'>
-            <h1 className='font-inter text-lg ml-4 lg:text-3xl lg:ml-7'>R$ {balanceShown ? userApi.wage : "******"} </h1>
+            <h1 className='font-inter text-lg ml-4 lg:text-3xl lg:ml-7'>R$ {balanceShown ? userApi.balance : "******"} </h1>
             <span className='hover:cursor-pointer' onClick={toggleBalance}><img src={Eye}/></span>
           </div>
           <h1 className='font-inter text-lg mt-7 mr-4 lg:text-3xl lg:mr-7'>Welcome, {userApi.username}.</h1>
+          <div>
+            <h1>{userApi.agency}</h1> 
+            <h1>{userApi.number}</h1> 
+          </div>
         </div>
       <div className='w-full h-screen flex items-end'>
         <div className='w-screen h-[90vh] bg-yellow rounded-t-2xl flex flex-col gap-8 justify-center items-center'>

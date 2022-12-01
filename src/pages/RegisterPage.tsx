@@ -26,7 +26,7 @@ const RegisterPage = () => {
     .then((res) => {
       console.log(res.data)
       Notiflix.Notify.success('Usuário cadastrado com sucesso!')
-      navigate('/login')
+      // navigate('/login')
     })
     .catch((err) => {
       console.log(err)
