@@ -24,9 +24,8 @@ const RegisterPage = () => {
     event.preventDefault()
     axios.post('http://127.0.0.1:8000/api/register', register, {headers:{"Content-Type" : "application/json"}})
     .then((res) => {
-      console.log(res.data)
       Notiflix.Notify.success('Usuário cadastrado com sucesso!', {timeout: 1300, position:'center-top'})
-      // navigate('/login')
+      navigate('/login')
     })
     .catch((err) => {
       console.log(err)
