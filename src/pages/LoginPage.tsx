@@ -27,7 +27,7 @@ const LoginPage = () => {
       }
     })
     .catch((err) => {
-      Notiflix.Notify.failure('Usuário ou senha incorretos D:')
+      Notiflix.Notify.failure("Usuario ou senha incorretos...", {timeout: 1300, position:'center-top'})
     })
   }
 

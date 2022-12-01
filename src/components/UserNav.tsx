@@ -22,7 +22,7 @@ const UserNav = (props: GetProps) => {
           if (result.isConfirmed){
             localStorage.clear()
             navigate('/')
-            Notify.info('Signed out')
+            Notify.info('Signed out', {timeout: 1300, position:'center-top'})
           }
         })}
         localStorage.clear() 
