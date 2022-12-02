@@ -26,11 +26,12 @@ const RegisterPage = () => {
   const onInputChange = (evt: any) => {
     evt.preventDefault()
     setRegister({...register, [evt.target.name]: evt.target.value })
+    console.log(register)
   }
 
   const registerUser = (event: any) => {
     event.preventDefault()
-    axios.post('https://api-luciano.azurewebsites.net/api/register', register, {headers:{"Content-Type" : "application/json"}})
+    axios.post('http://127.0.0.1:8000/api/register', register, {headers:{"Content-Type" : "application/json"}})
     .then((res) => {
       Notiflix.Notify.success('Usuário cadastrado com sucesso!', {timeout: 1300, position:'center-top'})
       navigate('/login')
@@ -47,7 +48,7 @@ const RegisterPage = () => {
             <form onSubmit={registerUser} className='h-[80vh] w-[85vw] flex flex-col items-center justify-center gap-4 '>
             <h1 className='font-inter text-3xl text-yellow font-bold [text-shadow:_0_2px_0_rgb(0_0_0_/_20%)]'>SIGN UP</h1>
                 <input type="text" placeholder='Name' name="username" onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
-                <input  name='cpf' placeholder='CPF' className="py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none"/>
+                <input  name='cpf' placeholder='CPF' className="py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none" onChange={onInputChange}/>
                 <input type="email" placeholder='Email' name='email' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 <input type="text" placeholder='Wage' name='wage' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 <input type="password" placeholder='Password' name='password' onChange={onInputChange}  className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>

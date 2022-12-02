@@ -28,7 +28,7 @@ const LoginPage = () => {
 
   const login = (event: any) => {
     event.preventDefault()
-    axios.post('https://api-luciano.azurewebsites.net/api/login', user, {headers:{"Content-Type" : "application/json"}})
+    axios.post('http://127.0.0.1:8000/api/login', user, {headers:{"Content-Type" : "application/json"}})
     .then((res) => {
       localStorage.setItem('token', `${res.data['token']}`)
       if (localStorage.getItem('token') != null){
