@@ -31,13 +31,17 @@ const RegisterPage = () => {
 
   const registerUser = (event: any) => {
     event.preventDefault()
-    axios.post('https://api-luciano.azurewebsites.net/api/register', register, {headers:{"Content-Type" : "application/json"}})
+    axios.post('https://api-luciano.azurewebsites.net/api/register ', register, {headers:{"Content-Type" : "application/json"}})
     .then((res) => {
       Notiflix.Notify.success('Usuário cadastrado com sucesso!', {timeout: 1300, position:'center-top'})
       navigate('/login')
     })
     .catch((err) => {
-      console.log(err)
+      Notiflix.Report.failure(
+        'Erro ao cadastrar usuário',
+        'Credenciais já cadastradas!',
+        'Ok'
+      )
     })
   }
 
