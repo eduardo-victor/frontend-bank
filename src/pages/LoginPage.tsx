@@ -46,7 +46,7 @@ const LoginPage = () => {
         <div className='w-[85vw] h-[40vh] lg:w-[20vw] lg:h-[50vh] md:w-[40vw] sm:w-[50vw] bg-white rounded-md shadow-md flex flex-col items-center justify-center'>
         <form onSubmit={login} className='h-[80vh] w-[85vw] flex flex-col items-center justify-center gap-6 '>
                 <h1 className='font-inter text-3xl text-yellow font-bold [text-shadow:_0_2px_0_rgb(0_0_0_/_20%)]'>SIGN IN</h1>
-                <IMaskInput name='cpf' placeholder='CPF'  mask="000.000.000-00" className="py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none"/>
+                <input name='cpf' placeholder='CPF' className="py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none"/>
                 <input type="password" placeholder='Password' name='password' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 
                 <button className='py-2 px-[12vh] lg:px-[11vh] font-inter border-2 border-white bg-yellow rounded-sm hover:bg-transparent hover:border-2 hover:border-yellow hover:text-yellow hover:transition text-white'>Login</button>
