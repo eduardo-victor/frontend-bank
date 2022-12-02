@@ -29,7 +29,7 @@ const UserNav = (props: GetProps) => {
       }
     
     return (
-        <div className='w-screen h-[100px] z-50 bg-yellow [text-shadow:_0_1px_0_rgb(0_0_0_/_20%)] md:w-full'>
+        <div className='w-full h-[100px] z-50 bg-yellow [text-shadow:_0_1px_0_rgb(0_0_0_/_20%)] md:w-full'>
             <div className='px-4 flex justify-between items-center w-full h-full '>
                 <div className='flex items-center'>
                     <h1 className='font-quicksand font-bold text-4xl text-white [text-shadow:_0_1px_0_rgb(0_0_0_/_20%)]'>bankey</h1>
