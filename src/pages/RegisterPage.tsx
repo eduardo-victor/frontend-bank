@@ -47,7 +47,7 @@ const RegisterPage = () => {
             <form onSubmit={registerUser} className='h-[80vh] w-[85vw] flex flex-col items-center justify-center gap-4 '>
             <h1 className='font-inter text-3xl text-yellow font-bold [text-shadow:_0_2px_0_rgb(0_0_0_/_20%)]'>SIGN UP</h1>
                 <input type="text" placeholder='Name' name="username" onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
-                <IMaskInput  name='cpf' placeholder='CPF'  mask="000.000.000-00" className="py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none"/>
+                <input  name='cpf' placeholder='CPF' className="py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none"/>
                 <input type="email" placeholder='Email' name='email' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 <input type="text" placeholder='Wage' name='wage' onChange={onInputChange} className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
                 <input type="password" placeholder='Password' name='password' onChange={onInputChange}  className='py-2 px-8 bg-[#F4F4F4] border-b-4 border-yellow outline-none'/>
