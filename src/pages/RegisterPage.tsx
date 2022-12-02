@@ -37,11 +37,15 @@ const RegisterPage = () => {
       navigate('/login')
     })
     .catch((err) => {
-      Notiflix.Report.failure(
+      Notiflix.Report.warning(
         'Erro ao cadastrar usuário',
-        'Credenciais já cadastradas!',
-        'Ok'
-      )
+        'Já existe um usuário cadastrado com estas credenciais.',
+        'Login',
+        () => {
+          navigate('/login')
+        }
+        )
+
     })
   }
 
